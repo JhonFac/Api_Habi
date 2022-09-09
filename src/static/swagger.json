@@ -1,0 +1,193 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "EndPoints de prueba ára Hubi",
+        "description": "Se realiza dos EndPoints, uno de ellos consulta por medio de filtros una tabla o base de datos y el otro agrega registros en una tabla con valores relacionados",
+        "contact": {
+            "email": "jhonfredyaya@gmail.com"
+        },
+        "license": {
+            "name": "GitHub",
+            "url": "https://github.com/JhonFac/"
+        },
+        "version": "1.0.11"
+    },
+    "paths": {
+        "/building": {
+            "post": {
+                "tags": [
+                    "Building"
+                ],
+                "summary": "check the building",
+                "description": "Query with or without filters",
+                "operationId": "Query",
+                "requestBody": {
+                    "description": "Create a json but Query",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Building"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseBuilding"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/like": {
+            "post": {
+                "tags": [
+                    "Likes"
+                ],
+                "summary": "Create the likes in the database",
+                "description": "creates a record that relates the customer to the building they liked",
+                "operationId": "Create",
+                "requestBody": {
+                    "description": "Create a new row",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/likes"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Responselikes"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Building": {
+                "type": "object",
+                "properties": {
+                    "fields": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "type": "string",
+                                    "example": "city"
+                                },
+                                {
+                                    "type": "string",
+                                    "example": "price"
+                                },
+                                {
+                                    "type": "string",
+                                    "example": "address"
+                                },
+                                {
+                                    "type": "string",
+                                    "example": "year"
+                                }
+                            ]
+                        }
+                    },
+                    "filter": {
+                        "type": "object",
+                        "properties": {
+                            "price": {
+                                "type": "integer",
+                                "example": 120000000
+                            },
+                            "state": {
+                                "type": "string",
+                                "example": "pre_venta"
+                            },
+                            "year": {
+                                "type": "integer",
+                                "example": 2000
+                            }
+                        }
+                    }
+                }
+            },
+            "ResponseBuilding": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 2
+                    },
+                    "address": {
+                        "type": "string",
+                        "example": "carrera 100"
+                    },
+                    "likes": {
+                        "type": "integer",
+                        "example": 6
+                    },
+                    "city": {
+                        "type": "string",
+                        "example": "bogota"
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Amplio apartamento en conjunto cerrado"
+                    },
+                    "price": {
+                        "type": "integer",
+                        "example": 350000000
+                    },
+                    "year": {
+                        "type": "integer",
+                        "example": 2011
+                    }
+                }
+            },
+            "likes": {
+                "type": "object",
+                "properties": {
+                    "user": {
+                        "type": "integer",
+                        "example": 10
+                    },
+                    "buildig": {
+                        "type": "integer",
+                        "example": 45
+                    }
+                }
+            },
+            "Responselikes": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "Successful"
+                    }
+                }
+            }
+        }
+    }
+}

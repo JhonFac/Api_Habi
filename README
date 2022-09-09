@@ -1,0 +1,72 @@
+###  OBJETIVE  ###
+
+    se desea tener dos microservicios. El primero para que los usuarios externos puedan
+    consultar los inmuebles disponibles almacenados en la base de datos. El segundo para que los
+    usuarios puedan darle “Me gusta” a un inmueble en específico.
+
+    Servicio de consulta
+
+        ● Los usuarios pueden consultar los inmuebles con los estados: “pre_venta”, “en_venta” y
+        “vendido” (los inmuebles con estados distintos nunca deben ser visibles por el usuario).
+        ● Los usuarios pueden filtrar estos inmuebles por: Año de construcción, Ciudad, Estado.
+        ● Los usuarios pueden aplicar varios filtros en la misma consulta.
+        ● Los usuarios pueden ver la siguiente información del inmueble: Dirección, Ciudad,
+        Estado, Precio de venta y Descripción.
+
+    Servicio de “Me gusta”
+
+        ● Los usuarios pueden darle me gusta a un inmueble en específico y esto debe quedar
+        registrado en la base de datos.
+        ● Los “Me gusta” son de usuarios registrados, y debe quedar registrado en la base de
+        datos el histórico de “me gusta” de cada usuario y a cuáles inmuebles.
+
+
+###  swagger documentation  ###
+https://editor.swagger.io/
+
+
+
+###  START-UP COMMANDS  ###
+
+# create virtual environment 
+    - virtualenv env_habi
+
+# activate virtual environment 
+    - cd env_habi\Scripts
+    - activate 
+    - cd ..
+    - cd ..
+
+# install requirements
+
+    - pip install requirements.txt
+
+# install dotenv - allows me to read environment variables
+
+    - python -m pip install python-dotenv 
+
+# Run API
+
+    - python src\api.py
+
+
+# THE PROJECT WILL BE RUNNING AT THE URL
+
+    http://127.0.0.1:5001
+
+
+# documentation in swagger
+    http://127.0.0.1:5001/swagger/
+
+
+###  OTHER COMMANDS  ###
+
+#  command to create requirements.txt  #
+    - pip freeze > requirements.txt
+
+#  command to upgrade pip  #
+    python.exe -m pip install --upgrade pip
+
+
+
+
