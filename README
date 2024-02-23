@@ -24,6 +24,14 @@ curl --location 'http://localhost:8000/' \
 --data '{"data": "ejemplo"}'
 
 
+###  .env varible name  ###
+
+DB_HOST=''
+DB_PORT=''
+DB_USER=''
+DB_PASSWORD=''
+DB_DATABASE=''
+
 
 ###  START-UP COMMANDS  ###
 
