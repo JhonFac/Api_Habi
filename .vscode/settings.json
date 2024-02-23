@@ -1,0 +1,24 @@
+{
+    "cSpell.words": [
+        "conectar",
+        "Connet",
+        "contraseña",
+        "datos",
+        "dotenv",
+        "encontrado",
+        "GETOKEN",
+        "habi",
+        "Hola",
+        "inválido",
+        "nombre",
+        "parámetros",
+        "proporcionado",
+        "pruebas",
+        "resultados",
+        "usuario",
+        "VALIDAR"
+    ],
+    "python.analysis.extraPaths": [
+        "./app"
+    ]
+}

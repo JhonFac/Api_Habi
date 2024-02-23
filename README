@@ -1,0 +1,66 @@
+###  OBJETIVE  ###
+
+    se desea tener dos microservicios. El primero pme va a listar la informacion a base de datos y la segunda me va a traer el token 
+    el segundo servicio es un post el cual simplemente me va a retornar el mismo body que envia,
+
+    ambos servicios se deben consumir con el token
+
+###  cURLs para consumir servicios  ###
+
+ ##  Get method  ##
+
+curl --location 'http://localhost:8000/' \
+--header 'Authorization: Bearer aGFiaTo='
+
+
+curl --location 'http://localhost:8000/token' \
+--header 'Authorization: Bearer aGFiaTo='
+
+ ##  Post method  ##
+
+curl --location 'http://localhost:8000/' \
+--header 'Authorization: Bearer aGFiaTo=' \
+--header 'Content-Type: application/json' \
+--data '{"data": "ejemplo"}'
+
+
+
+###  START-UP COMMANDS  ###
+
+# create virtual environment 
+    - virtualenv env_habi
+
+# activate virtual environment 
+    - cd env_habi\Scripts
+    - activate 
+    - cd ..
+    - cd ..
+
+# install requirements
+
+    - pip install requirements.txt
+
+# install dotenv - allows me to read environment variables
+
+    - python -m pip install python-dotenv 
+
+# Run API
+
+    - python main.py
+
+
+# THE PROJECT WILL BE RUNNING AT THE URL
+
+    http://localhost:8000/
+
+
+###  OTHER COMMANDS  ###
+
+#  command to create requirements.txt  #
+    - pip freeze > requirements.txt
+
+#  command to upgrade pip  #
+    python.exe -m pip install --upgrade pip
+
+
+
