@@ -57,9 +57,13 @@ DB_DATABASE=''
     - python main.py
 
 
-# THE PROJECT WILL BE RUNNING AT THE URL
+# THE PROJECT WILL BE RUNNING AT THE URL #
 
     http://localhost:8000/
+
+# RUN TEST #
+
+pytest -v
 
 
 ###  OTHER COMMANDS  ###
