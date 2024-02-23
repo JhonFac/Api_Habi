@@ -36,7 +36,7 @@ DB_DATABASE=''
 ###  START-UP COMMANDS  ###
 
 # create virtual environment 
-    - virtualenv env_habi
+    - python -m venv env
 
 # activate virtual environment 
     - cd env_habi\Scripts

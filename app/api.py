@@ -2,9 +2,10 @@ from http.server import BaseHTTPRequestHandler
 from constants import GETOKEN, GETRESPONSE, NOBODY
 from app.controllers import controller_token
 from app.connect_db import ConnetDB
-
+import socket
 
 class APIServer(BaseHTTPRequestHandler):
+
     def _set_headers(self, status_code=200, content_type='application/json'):
         self.send_response(status_code)
         self.send_header('Content-type', content_type)
