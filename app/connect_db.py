@@ -1,12 +1,15 @@
-import os
 import json
+import os
+
 import MySQLdb
 from dotenv import load_dotenv
+
 
 class ConnetDB():
 
     # variables and connection to databases
     def __init__(self) -> None:
+        print('Connecting to database...')
         load_dotenv()
         self.conexion = MySQLdb.connect(
             host=os.getenv("DB_HOST"),
@@ -16,7 +19,7 @@ class ConnetDB():
             db=os.getenv("DB_DATABASE"),
         )
         self.conexion.cursor()
-        print('se conecto')
+        print('Connected')
 
     def query(self):
         try:
